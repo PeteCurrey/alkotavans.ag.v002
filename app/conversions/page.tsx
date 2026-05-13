@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import Badge from '@/components/ui/Badge'
 import RevealOnScroll from '@/components/shared/RevealOnScroll'
 
 export const metadata: Metadata = {

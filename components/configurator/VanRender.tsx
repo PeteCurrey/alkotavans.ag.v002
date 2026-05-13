@@ -3,11 +3,9 @@
 import { motion } from 'framer-motion'
 
 export default function VanRender({
-  selectedPlatformId,
   selectedSuspensionId,
   selectedRoofId
 }: {
-  selectedPlatformId?: string
   selectedSuspensionId?: string
   selectedRoofId?: string
 }) {

@@ -160,7 +160,6 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 export default function ConversionLayoutPage({ params }: { params: { slug: string } }) {
   const data = layoutData[params.slug as LayoutKey]
   if (!data) notFound()
-  const isLight = params.slug === 'holt' || params.slug === 'dale' || params.slug === 'commission'
 
   return (
     <>

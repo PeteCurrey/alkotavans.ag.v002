@@ -51,7 +51,7 @@ export default function OptionsPanel({
       </div>
 
       <div className="flex-1 p-8 md:p-12 pt-8 flex flex-col gap-12">
-        {stageData.subcategories.map((sub, i) => {
+        {stageData.subcategories.map((sub) => {
           // Create a stable key for the category based on its title
           const catKey = `${stageData.id}-${sub.title.replace(/\s+/g, '-').toLowerCase()}`
           

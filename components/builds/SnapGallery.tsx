@@ -96,7 +96,6 @@ const builds = [
 
 export default function SnapGallery() {
   const [activeIndex, setActiveIndex] = useState(0)
-  const [prevIndex, setPrevIndex] = useState<number | null>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([])
 
@@ -114,7 +113,6 @@ export default function SnapGallery() {
           if (entry.isIntersecting) {
             const index = sectionRefs.current.indexOf(entry.target as HTMLDivElement)
             if (index !== -1) {
-              setPrevIndex(activeIndex)
               setActiveIndex(index)
             }
           }
