@@ -65,10 +65,7 @@ export default function Footer() {
                 <li key={l.href}>
                   <Link
                     href={l.href}
-                    className="font-body text-[13px] no-underline transition-colors duration-200"
-                    style={{ color: 'rgba(244,241,236,0.65)' }}
-                    onMouseOver={(e) => (e.currentTarget.style.color = 'rgba(244,241,236,1)')}
-                    onMouseOut={(e) => (e.currentTarget.style.color = 'rgba(244,241,236,0.65)')}
+                    className="font-body text-[13px] no-underline transition-colors duration-200 text-white/65 hover:text-white"
                   >
                     {l.label}
                   </Link>
@@ -90,10 +87,7 @@ export default function Footer() {
                 <li key={l.href}>
                   <Link
                     href={l.href}
-                    className="font-body text-[13px] no-underline transition-colors duration-200"
-                    style={{ color: 'rgba(244,241,236,0.65)' }}
-                    onMouseOver={(e) => (e.currentTarget.style.color = 'rgba(244,241,236,1)')}
-                    onMouseOut={(e) => (e.currentTarget.style.color = 'rgba(244,241,236,0.65)')}
+                    className="font-body text-[13px] no-underline transition-colors duration-200 text-white/65 hover:text-white"
                   >
                     {l.label}
                   </Link>
