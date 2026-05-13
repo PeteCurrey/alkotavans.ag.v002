@@ -56,8 +56,8 @@ export default function ConfiguratorShell({ initialLayout }: { initialLayout?: s
     const allOptions = configuratorData.flatMap(s => s.subcategories.flatMap(sub => sub.options))
     Object.values(selections).forEach(selectedId => {
       const opt = allOptions.find(o => o.id === selectedId)
-      if (opt && opt.price) {
-        total += opt.price
+      if (opt && (opt as any).price) {
+        total += (opt as any).price
       }
     })
     return total
