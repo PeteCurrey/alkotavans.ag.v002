@@ -42,10 +42,7 @@ export default function PartnerLogos() {
               <div key={partner.name} className="flex items-center">
                 <a
                   href={partner.href}
-                  className="font-body font-medium text-[14px] px-5 py-3 no-underline transition-colors duration-250 block"
-                  style={{ color: 'var(--alkota-stone)' }}
-                  onMouseOver={(e) => (e.currentTarget.style.color = 'var(--alkota-obsidian)')}
-                  onMouseOut={(e) => (e.currentTarget.style.color = 'var(--alkota-stone)')}
+                  className="font-body font-medium text-[14px] px-5 py-3 no-underline transition-colors duration-250 block text-alkota-stone hover:text-alkota-obsidian"
                 >
                   {partner.name}
                 </a>

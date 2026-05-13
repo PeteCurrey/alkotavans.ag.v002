@@ -207,10 +207,8 @@ export default function ConversionLayoutPage({ params }: { params: { slug: strin
             {data.vans.map((van, i) => (
               <RevealOnScroll key={van.name} delay={i * 0.08}>
                 <div
-                  className="p-6 border transition-all duration-250 cursor-pointer"
+                  className="p-6 border transition-all duration-250 cursor-pointer hover:border-alkota-forest"
                   style={{ borderColor: 'var(--alkota-stone)', borderRadius: 0 }}
-                  onMouseOver={(e) => (e.currentTarget.style.borderColor = 'var(--alkota-forest)')}
-                  onMouseOut={(e) => (e.currentTarget.style.borderColor = 'var(--alkota-stone)')}
                 >
                   <div className="font-display font-bold text-[20px] mb-2" style={{ color: 'var(--alkota-obsidian)' }}>{van.name}</div>
                   <div className="font-mono text-[10px] mb-1" style={{ color: 'var(--alkota-stone)' }}>{van.model}</div>

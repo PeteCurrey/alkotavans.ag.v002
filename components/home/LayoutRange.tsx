@@ -62,12 +62,10 @@ export default function LayoutRange() {
           {layouts.map((layout, i) => (
             <RevealOnScroll key={layout.name} delay={i * 0.1}>
               <motion.div
-                className="group relative flex flex-col p-7 border-r border-b border-[rgba(25,28,20,0.08)] last:border-r-0 md:last:border-r-0 lg:last:border-r-0 min-h-[380px] bg-white"
+                className="group relative flex flex-col p-7 border-r border-b border-[rgba(25,28,20,0.08)] last:border-r-0 md:last:border-r-0 lg:last:border-r-0 min-h-[380px] bg-white hover:border-alkota-forest"
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-                style={{ borderColor: 'rgba(25,28,20,0.08)', transition: 'border-color 0.25s, transform 0.3s' }}
-                onMouseOver={(e) => (e.currentTarget.style.borderColor = 'var(--alkota-forest)')}
-                onMouseOut={(e) => (e.currentTarget.style.borderColor = 'rgba(25,28,20,0.08)')}
+                style={{ transition: 'border-color 0.25s, transform 0.3s' }}
               >
                 {/* Layout name */}
                 <div

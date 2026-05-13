@@ -50,10 +50,7 @@ export default function GalleryStrip() {
         <div className="flex justify-end mt-6">
           <Link
             href="/builds"
-            className="font-body font-medium text-[11px] uppercase tracking-[0.1em] no-underline transition-colors duration-200"
-            style={{ color: 'rgba(244,241,236,0.5)' }}
-            onMouseOver={(e) => (e.currentTarget.style.color = 'rgba(244,241,236,0.9)')}
-            onMouseOut={(e) => (e.currentTarget.style.color = 'rgba(244,241,236,0.5)')}
+            className="font-body font-medium text-[11px] uppercase tracking-[0.1em] no-underline transition-colors duration-200 text-white/50 hover:text-white/90"
           >
             View all builds →
           </Link>

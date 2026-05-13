@@ -114,10 +114,7 @@ export default function BuildsPreview() {
           <RevealOnScroll delay={0.3}>
             <Link
               href="/builds"
-              className="font-body font-medium text-[12px] uppercase tracking-[0.1em] no-underline transition-colors duration-200"
-              style={{ color: 'rgba(244,241,236,0.55)' }}
-              onMouseOver={(e) => (e.currentTarget.style.color = 'rgba(244,241,236,0.9)')}
-              onMouseOut={(e) => (e.currentTarget.style.color = 'rgba(244,241,236,0.55)')}
+              className="font-body font-medium text-[12px] uppercase tracking-[0.1em] no-underline transition-colors duration-200 text-white/55 hover:text-white/90"
             >
               View all builds →
             </Link>
