@@ -59,6 +59,24 @@ body {
 }
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 
+/* ─── Mobile touch improvements ─── */
+.touch-pan-x {
+  touch-action: pan-x;
+  -webkit-overflow-scrolling: touch;
+}
+.overscroll-contain {
+  overscroll-behavior: contain;
+}
+
+/* ─── Safe area (iPhone notch) ─── */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+
 /* ─── Snap scroll container ─── */
 .snap-container {
   height: 100vh;
