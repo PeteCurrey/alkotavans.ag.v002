@@ -1,4 +1,4 @@
-import { options } from "../../lib/data/commissioningEngine/options";
+import { options } from "@/lib/data/commissioningEngine/options";
 
 export type LightingMode = 'day' | 'dusk' | 'camp';
 
