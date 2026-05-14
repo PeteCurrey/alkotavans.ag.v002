@@ -1,10 +1,9 @@
 'use client'
 
 import React, { createContext, useContext, useState, useMemo } from 'react';
-import { options } from '../data/commissioningEngine/options';
-
-import { rules } from '../data/commissioningEngine/rules';
-import { calculateScores, ConfigScores } from '../data/commissioningEngine/scoring';
+import { options } from '@/lib/data/commissioningEngine/options';
+import { rules } from '@/lib/data/commissioningEngine/rules';
+import { calculateScores, ConfigScores } from '@/lib/data/commissioningEngine/scoring';
 
 interface ConfiguratorState {
   selectedOptionIds: string[];

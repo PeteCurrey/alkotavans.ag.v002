@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { configuratorData } from './configuratorData'
 import StagesRail from './StagesRail'
-import { VehicleRenderer } from './VisualEngine/VehicleRenderer'
+import VanRender from './VanRender'
 import PriceBar from './PriceBar'
 import OptionsPanel from './OptionsPanel'
 import { AnimatePresence, motion } from 'framer-motion'
@@ -46,6 +46,10 @@ export default function ConfiguratorShell({ initialLayout }: { initialLayout?: s
 
   const currentStageData = configuratorData.find(s => s.id === currentStage)
 
+  // Derived visual state for the SVG renderer
+  const selectedSuspensionId = selectedOptionIds.find(id => id.startsWith('susp-'))
+  const selectedRoofId = selectedOptionIds.find(id => id.startsWith('rrack-'))
+
   if (!currentStageData) return null
 
   return (
@@ -78,7 +82,12 @@ export default function ConfiguratorShell({ initialLayout }: { initialLayout?: s
 
         {/* Left: Render + Navigation */}
         <div className={`w-full lg:w-1/2 flex flex-col h-full border-b lg:border-b-0 border-alkota-obsidian/10 relative bg-alkota-obsidian ${mobileView === 'options' ? 'hidden lg:flex' : 'flex'}`}>
-          <VehicleRenderer />
+          <div className="flex-1 min-h-0">
+            <VanRender 
+              selectedSuspensionId={selectedSuspensionId}
+              selectedRoofId={selectedRoofId}
+            />
+          </div>
           
           {/* Stage Navigation Overlays */}
           <div className="absolute inset-x-0 bottom-0 p-4 md:p-6 flex justify-between items-center pointer-events-none z-40">
@@ -119,6 +128,7 @@ export default function ConfiguratorShell({ initialLayout }: { initialLayout?: s
           </AnimatePresence>
         </div>
       </div>
+
 
       {/* Bottom Sticky Price Bar */}
       <PriceBar onReset={handleReset} />

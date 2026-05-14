@@ -3,10 +3,10 @@
 import React, { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import NextImage from 'next/image';
-import { useConfigurator } from '../../../lib/store/ConfiguratorContext';
+import { useConfigurator } from '@/lib/store/ConfiguratorContext';
 import { getOrderedLayers, LightingMode } from './LayerManager';
 import { HotspotOverlay } from './Hotspots';
-import { Label } from '../../ui/Typography';
+import { Label } from '@/components/ui/Typography';
 import { Sun, Moon, Tent } from 'lucide-react';
 
 type ViewMode = 'front' | 'side' | 'rear' | 'roof';

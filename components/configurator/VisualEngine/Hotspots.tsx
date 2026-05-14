@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useConfigurator } from '../../../lib/store/ConfiguratorContext';
+import { useConfigurator } from '@/lib/store/ConfiguratorContext';
 
 interface HotspotProps {
   x: number; // percentage
