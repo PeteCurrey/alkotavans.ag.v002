@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import NextImage from 'next/image';
 import { useConfigurator } from '../../../lib/store/ConfiguratorContext';
 import { getOrderedLayers, LightingMode } from './LayerManager';
 import { HotspotOverlay } from './Hotspots';
@@ -25,9 +26,9 @@ export function VehicleRenderer() {
           <button
             key={mode}
             onClick={() => setLightingMode(mode)}
-            className={`p-2 rounded-full border transition-all ${
-              lightingMode === mode 
-                ? 'bg-alkota-copper border-alkota-copper text-alkota-chalk' 
+            className={`p-2 border transition-all ${
+              lightingMode === mode
+                ? 'bg-alkota-copper border-alkota-copper text-alkota-chalk'
                 : 'bg-alkota-obsidian/40 border-alkota-white/10 text-alkota-chalk/50 hover:border-alkota-white/30'
             }`}
           >
@@ -50,21 +51,30 @@ export function VehicleRenderer() {
             className="absolute inset-0"
           >
             {/* BASE CHASSIS */}
-            <img 
-              src={`/images/renders/${view}/base-chassis.png`} 
-              alt="Base Chassis"
-              className="w-full h-full object-contain pointer-events-none"
-            />
+            <div className="relative w-full h-full">
+              <NextImage
+                src={`/images/renders/${view}/base-chassis.png`}
+                alt="Base chassis"
+                fill
+                className="object-contain pointer-events-none"
+                priority
+              />
+            </div>
 
             {/* DYNAMIC LAYERS */}
             {layers.map(layer => (
-              <img
+              <div
                 key={layer.id}
-                src={`/images/renders/${view}/${layer.asset}.png`}
-                alt={layer.id}
+                className="absolute inset-0"
                 style={{ zIndex: layer.zIndex }}
-                className="absolute inset-0 w-full h-full object-contain pointer-events-none"
-              />
+              >
+                <NextImage
+                  src={`/images/renders/${view}/${layer.asset}.png`}
+                  alt={layer.id}
+                  fill
+                  className="object-contain pointer-events-none"
+                />
+              </div>
             ))}
 
             {/* INTERACTIVE HOTSPOTS */}
@@ -74,11 +84,11 @@ export function VehicleRenderer() {
 
         {/* CINEMATIC LIGHTING OVERLAYS */}
         <div className={`absolute inset-0 transition-opacity duration-1000 pointer-events-none ${
-          lightingMode === 'day' ? 'opacity-0' : 
-          lightingMode === 'dusk' ? 'opacity-40 bg-blue-900/20 mix-blend-multiply' : 
+          lightingMode === 'day' ? 'opacity-0' :
+          lightingMode === 'dusk' ? 'opacity-40 bg-blue-900/20 mix-blend-multiply' :
           'opacity-60 bg-alkota-obsidian/40 mix-blend-multiply'
         }`} />
-        
+
         <div className={`absolute inset-0 transition-opacity duration-1000 pointer-events-none bg-gradient-to-b from-transparent via-transparent to-alkota-obsidian/80 ${
           lightingMode === 'day' ? 'opacity-20' : 'opacity-60'
         }`} />

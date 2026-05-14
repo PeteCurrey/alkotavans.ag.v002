@@ -1,5 +1,6 @@
-import React, { createContext, useContext, useState, useMemo, useEffect } from 'react';
-import { options, CommissioningOption } from '../data/commissioningEngine/options';
+import React, { createContext, useContext, useState, useMemo } from 'react';
+import { options } from '../data/commissioningEngine/options';
+
 import { rules } from '../data/commissioningEngine/rules';
 import { calculateScores, ConfigScores } from '../data/commissioningEngine/scoring';
 
